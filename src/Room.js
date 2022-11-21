@@ -24,26 +24,50 @@ const Room = ({ roomName, room, handleLogout }) => {
     };
   }, [room]);
 
+  console.log("AYOAYOAYO")
+  console.log(participants)
+
   const remoteParticipants = participants.map((participant) => (
     <Participant key={participant.sid} participant={participant} />
   ));
+
+  const windowBackF = participants.filter(p => p.identity === "windowFront")
+  console.log(windowBackF)
+  const windowBackFriends = windowBackF.map((participant) => (
+    <Participant key={participant.sid} participant={participant} />
+  ));
+  console.log(participants)
+
+  const windowFrontFriends = participants.filter(p => p.identity === "windowBack").map((participant) => (
+    <Participant key={participant.sid} participant={participant} />
+  )); 
+
+
+
 
   return (
     <div className="room">
       <h2>Room: {roomName}</h2>
       <button onClick={handleLogout}>Log out</button>
       <div className="local-participant">
+
         {room ? (
-          <Participant
-            key={room.localParticipant.sid}
-            participant={room.localParticipant}
-          />
+
+          room.localParticipant.identity === "guest" ?
+          <div className="remote-participants">{remoteParticipants}</div>
+          : 
+          // if windowback
+          room.localParticipant.identity === "windowFront" ?
+          <div className="wfFriends">{windowBackFriends}</div>
+          : 
+          // windowfront
+          <div className="wfFriends">{windowFrontFriends}</div>
         ) : (
           ""
         )}
       </div>
-      <h3>Remote Participants</h3>
-      <div className="remote-participants">{remoteParticipants}</div>
+      {/* <h3>Remote Participants</h3> */}
+      {/* <div className="remote-participants">{remoteParticipants}</div> */}
     </div>
   );
 };

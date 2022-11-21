@@ -17,8 +17,8 @@ const Lobby = ({
       <h2>Enter a room</h2>
 
       <Button style={{margin: "auto"}} onClick={() => handleUsernameChange('guest')}>Guest</Button>
-        <Button style={{margin: "auto"}} onClick={() => handleUsernameChange('windowFront')}>windowFront</Button>
-        <Button  style={{margin: "auto"}}onClick={() => handleUsernameChange('windowBack')}>windowBack</Button>
+      <Button style={{margin: "auto"}} onClick={() => handleUsernameChange('windowFront')}>windowFront</Button>
+      <Button  style={{margin: "auto"}}onClick={() => handleUsernameChange('windowBack')}>windowBack</Button>
 
       <div>
         <label htmlFor="name">Name:</label>
@@ -27,7 +27,7 @@ const Lobby = ({
           id="field"
           value={username}
           onChange={handleUsernameChange}
-          readOnly={true}
+          readOnly={connecting}
           required
         />
       </div>

@@ -106,6 +106,13 @@ button:hover {
   justify-content: space-between;
   padding: 0 2em 2em;
 }
+.wfFriends {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 0 2em 2em;
+}
+
 .participant {
   background: #333e5a;
   padding: 10px;
