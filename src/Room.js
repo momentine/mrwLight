@@ -31,19 +31,28 @@ const Room = ({ roomName, room, handleLogout }) => {
     <Participant key={participant.sid} participant={participant} />
   ));
 
-  const windowBackF = participants.filter(p => p.identity === "windowFront")
-  console.log(windowBackF)
-  const windowBackFriends = windowBackF.map((participant) => (
-    <Participant key={participant.sid} participant={participant} />
-  ));
-  console.log(participants)
+  // const windowBackF = participants.filter(p => p.identity === "windowFront")
+  let windowBackPpl = []
 
-  const windowFrontFriends = participants.filter(p => p.identity === "windowBack").map((participant) => (
-    <Participant key={participant.sid} participant={participant} />
-  )); 
+  for (let i = 0; i < participants.length; i++) {
+    console.log("asdasdasd", participants[i], participants[i].identity) 
+    if (participants[i].identity === "windowFront") {
+      windowBackPpl.push(
+        <Participant key={participants[i].sid} participant={participants[i]} />
+      )
+    }
+  }
 
-
-
+  
+  const returnDisplay = (room) => {
+    console.log("ASIYSDGIUSD")
+    if (room.localParticipant.identity === "windowFront") {
+      return <div className="remote-participants">{remoteParticipants}</div>
+    } else if (room.localParticipant.identity === "guest") {
+      return <div className="remote-participants">{remoteParticipants}</div>
+    }
+    return <div className="remote-participants">{remoteParticipants}</div>
+  }
 
   return (
     <div className="room">
@@ -52,17 +61,11 @@ const Room = ({ roomName, room, handleLogout }) => {
       <div className="local-participant">
 
         {room ? (
-
-          room.localParticipant.identity === "guest" ?
-          <div className="remote-participants">{remoteParticipants}</div>
-          : 
-          // if windowback
-          room.localParticipant.identity === "windowFront" ?
-          <div className="wfFriends">{windowBackFriends}</div>
-          : 
-          // windowfront
-          <div className="wfFriends">{windowFrontFriends}</div>
-        ) : (
+          (
+            returnDisplay(room)
+          )
+        )
+        : (
           ""
         )}
       </div>
