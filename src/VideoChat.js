@@ -12,6 +12,10 @@ const VideoChat = () => {
   const handleUsernameChange = useCallback((event) => {
     setUsername(event.target.value);
   }, []);
+  
+  const setName = (name) => {
+    setUsername(name)
+  }
 
   const handleRoomNameChange = useCallback((event) => {
     setRoomName(event.target.value);
@@ -80,14 +84,14 @@ const VideoChat = () => {
   let render;
   if (room) {
     render = (
-      <Room roomName={roomName} room={room} handleLogout={handleLogout} />
+      <Room roomName={"mrw"} room={room} handleLogout={handleLogout} />
     );
   } else {
     render = (
       <Lobby
         username={username}
         roomName={roomName}
-        handleUsernameChange={handleUsernameChange}
+        handleUsernameChange={setName}
         handleRoomNameChange={handleRoomNameChange}
         handleSubmit={handleSubmit}
         connecting={connecting}
