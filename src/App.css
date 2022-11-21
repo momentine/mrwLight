@@ -105,6 +105,8 @@ button:hover {
   flex-wrap: nowrap;
   justify-content: space-between;
   padding: 0 2em 2em;
+  width: 1280px;
+  height: 720px;
 }
 .wfFriends {
   display: flex;
@@ -148,3 +150,7 @@ footer {
 footer a {
   color: #fff;
 }
+
+/* video {
+  filter:opacity(0%);
+} */

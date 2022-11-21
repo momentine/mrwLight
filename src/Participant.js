@@ -1,8 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
+import { SelfieSegmentation } from "@mediapipe/selfie_segmentation";
+
 
 const Participant = ({ participant }) => {
   const [videoTracks, setVideoTracks] = useState([]);
   const [audioTracks, setAudioTracks] = useState([]);
+
+  // const inputVideoRef = useRef();
+  const canvasRef = useRef();
+  const contextRef = useRef();
 
   const videoRef = useRef();
   const audioRef = useRef();
@@ -62,11 +68,92 @@ const Participant = ({ participant }) => {
     }
   }, [audioTracks]);
 
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
+  useEffect(() => {
+    contextRef.current = canvasRef.current.getContext("2d");
+    const constraints = {
+      video: { width: { min: 1280 }, height: { min: 720 } },
+    };
+    navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+  
+      videoRef.current.srcObject = stream;
+      sendToMediaPipe();
+      console.log(stream);
+    });
+    
+    // if (videoRef) {
+    //   sendToMediaPipe();
+    // }
+      
+    const selfieSegmentation = new SelfieSegmentation({
+      locateFile: (file) =>
+        `https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation/${file}`,
+    });
+
+    selfieSegmentation.setOptions({
+      modelSelection: 1,
+      selfieMode: true,
+    });
+
+    selfieSegmentation.onResults(onResults);
+
+    const sendToMediaPipe = async () => {
+      if (videoRef && !videoRef.current.videoWidth) {
+        console.log(videoRef.current.videoWidth);
+        requestAnimationFrame(sendToMediaPipe);
+      } else {
+        await selfieSegmentation.send({ image: videoRef.current });
+        requestAnimationFrame(sendToMediaPipe);
+      }
+    };
+  }, []);
+
+  const onResults = (results) => {
+    contextRef.current.save();
+    contextRef.current.clearRect(
+      0,
+      0,
+      canvasRef.current.width,
+      canvasRef.current.height
+    );
+    contextRef.current.drawImage(
+      results.segmentationMask,
+      0,
+      0,
+      canvasRef.current.width,
+      canvasRef.current.height
+    );
+    // Only overwrite existing pixels.
+    contextRef.current.globalCompositeOperation = "source-out";
+    contextRef.current.fillStyle = "#00FF00";
+    contextRef.current.fillRect(
+      0,
+      0,
+      canvasRef.current.width,
+      canvasRef.current.height
+    );
+
+    // Only overwrite missing pixels.
+    contextRef.current.globalCompositeOperation = "destination-atop";
+    contextRef.current.drawImage(
+      results.image,
+      0,
+      0,
+      canvasRef.current.width,
+      canvasRef.current.height
+    );
+
+    contextRef.current.restore();
+  };
   return (
     <div className="participant">
       <h3>{participant.identity}</h3>
       <video ref={videoRef} autoPlay={true} />
       <audio ref={audioRef} autoPlay={true} muted={true} />
+      <canvas ref={canvasRef} width={1280} height={720} />
     </div>
   );
 };
