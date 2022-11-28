@@ -31,15 +31,15 @@ const Lobby = ({
                 {/* <h2>Is host?</h2> */}
                 <div className="row">
                   <div className="col">
-                    <button className="hostButton"><img src={front} className="window" onClick={()=>handleUsernameChange('windowFront')}/></button>
+                    <button type="submit" className="hostButton"><img src={front} className="window" onClick={()=>handleUsernameChange('windowFront')}/></button>
                   </div>
                   <div className="col">
-                    <button className="hostButton"><img src={back} className="window" onClick={()=>handleUsernameChange('windowBack')}/></button>
+                    <button type="submit" className="hostButton"><img src={back} className="window" onClick={()=>handleUsernameChange('windowBack')}/></button>
             
                   </div>
                 </div>
                 {/* <h2>Is guest?</h2> */}
-                <button className="chooseButton" onClick={()=>handleUsernameChange('guest')}>
+                <button type="submit" className="chooseButton" onClick={()=>handleUsernameChange('guest')}>
                     Join Meeting As Guest
                 </button>
 
