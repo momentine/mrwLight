@@ -70,6 +70,8 @@ form > div > input {
   border: 1px solid #333e5a;
 }
 
+
+
 button {
   background: #333e5a;
   color: #fff;
@@ -100,14 +102,15 @@ button:hover {
   text-align: center;
   margin-bottom: 2em;
 }
+
 .remote-participants {
   display: flex;
-  flex-wrap: nowrap;
   justify-content: space-between;
   padding: 0 2em 2em;
-  width: 1280px;
-  height: 720px;
+  width: 640px;
+  height: 360px;
 }
+
 .wfFriends {
   display: flex;
   flex-wrap: nowrap;
@@ -115,25 +118,63 @@ button:hover {
   padding: 0 2em 2em;
 }
 
-.participant {
-  background: #333e5a;
+
+.fullscreen-enabled .overlayBOX {
+  background: green;
+}
+
+
+.fullscreen-enabled .overlayBOX {
+  width:"100%";
+  height:"100%";
+}
+
+.fullscreen-enabled video {
+  width:"100%" ;
+  height:"100%" ;
+}
+
+.fullscreen-enabled canvas {
+  width:"100%" ;
+  height:"100%" ;
+}
+
+/* .participant {
+  /* background: #333e5a;
   padding: 10px;
   border-radius: 6px;
   display: inline-block;
-  margin-right: 10px;
-}
-.participant:last-child {
+  margin-right: 10px; 
+} */
+/* .participant:last-child {
   margin-right: 0;
 }
 .participant h3 {
   text-align: center;
   padding-bottom: 0.5em;
   color: #fff;
+} */
+
+.overlayBOX {
+  top: 0px;
+  left: 0px;
+  height: 800px;
+  width: 800px;
+  background-color: #f0293e;
+}
+
+canvas {
+  width: 1280px;
+  height: 960px;
 }
 
 video {
-  width: 100%;
-  max-width: 600px;
+  /* width: 100vw;
+  height: 100vh; */
+  width:1280px;
+  height:960px;
+  /* max-width: 640px;
+  max-height: 360px; */
   display: block;
   margin: 0 auto;
   border-radius: 6px;

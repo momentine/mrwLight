@@ -17,21 +17,9 @@ const App = () => {
         </Route>
       </Routes>
     </BrowserRouter>
-      {/* <header>
-        <h1>Video Chat with Hooks</h1>
-      </header>
-      <main>
+      {/* <main>
         <VideoChat />
-      </main>
-      <footer>
-        <p>
-          Made with{' '}
-          <span role="img" aria-label="React">
-            ⚛️
-          </span>{' '}
-          by <a href="https://twitter.com/philnash">philnash</a>
-        </p>
-      </footer> */}
+      </main> */}
     </div>
   );
 };
