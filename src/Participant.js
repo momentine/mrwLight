@@ -174,7 +174,7 @@ const Participant = ({ participant, canvasBool, styles }) => {
       <div id="overlayBOX">
         <video ref={videoRef} autoPlay={true} style={{filter:"opacity(0%)"}} />
         <audio ref={audioRef} autoPlay={true} muted={false} />
-        <canvas style={{position:"absolute", top:"0", left:"0", width:"720px", height:"540px"}} ref={canvasRef} />
+        <canvas style={{position:"absolute", top:"0", left:"0"}} ref={canvasRef} />
       </div>
     </div>
     :

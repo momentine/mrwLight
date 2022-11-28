@@ -5,13 +5,13 @@ import VideoChat from './VideoChat';
 const App = () => {
   return (
     <div className="app">
-      <header>
+      {/* <header>
         <h1>Video Chat with Hooks</h1>
-      </header>
+      </header> */}
       <main>
         <VideoChat />
       </main>
-      <footer>
+      {/* <footer>
         <p>
           Made with{' '}
           <span role="img" aria-label="React">
@@ -19,7 +19,7 @@ const App = () => {
           </span>{' '}
           by <a href="https://twitter.com/philnash">philnash</a>
         </p>
-      </footer>
+      </footer> */}
     </div>
   );
 };

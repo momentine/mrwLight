@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Participant from "./Participant";
+import useFullscreenStatus from "./useFullScreen.js"
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
 const Room = ({ roomName, room, handleLogout }) => {
@@ -12,6 +13,23 @@ const Room = ({ roomName, room, handleLogout }) => {
   const [windowFrontBG, setWFBG] = useState([]);
   const [windowBackBG, setWBBG] = useState([]);
   const [windowFrontG, setWFG] = useState([]);
+
+  // const [isFullscreen, setIsFullscreen] = useState([]);
+
+
+  // function getBrowserFullscreenElementProp() {
+  //   if (typeof document.fullscreenElement !== "undefined") {
+  //     return "fullscreenElement";
+  //   } else if (typeof document.mozFullScreenElement !== "undefined") {
+  //     return "mozFullScreenElement";
+  //   } else if (typeof document.msFullscreenElement !== "undefined") {
+  //     return "msFullscreenElement";
+  //   } else if (typeof document.webkitFullscreenElement !== "undefined") {
+  //     return "webkitFullscreenElement";
+  //   } else {
+  //     throw new Error("fullscreenElement is not supported by this browser");
+  //   }
+  // }
 
   useEffect(() => {
     const participantConnected = (participant) => {
@@ -77,7 +95,7 @@ const Room = ({ roomName, room, handleLogout }) => {
         // return overlay
         const wb = windowFrontBG[0]
         const gst = windowFrontG[0]
-        const styl = {position: "absolute", top:"0", left:"0"}
+        const styl = {position: "absolute", top:"0px", left:"0px"}
 
         return <>
           <Participant styles={styl} key={wb.sid} participant={wb} canvasBool={false}/>
@@ -104,7 +122,7 @@ const Room = ({ roomName, room, handleLogout }) => {
         // return overlay
         const wb = windowBackBG[0]
         const gst = windowFrontG[0]
-        const styl = {position: "absolute", top:"0", left:"0"}
+        const styl = {position: "absolute", top:"0px", left:"0px"}
         return <>
           <Participant styles={styl} key={wb.sid} participant={wb} canvasBool={false}/>
           <Participant styles={styl} key={gst.sid} participant={gst} canvasBool={true}/>
@@ -136,7 +154,7 @@ const Room = ({ roomName, room, handleLogout }) => {
   return (
     <div className="room">
       <h2>Room: {roomName}</h2>
-      <button onClick={handle.enter}>
+      <button onClick={handle.enter} styles={{margin:"10px"}}>
         Fullscreen
       </button>
       <button onClick={handleLogout}>Log out</button>
@@ -144,7 +162,9 @@ const Room = ({ roomName, room, handleLogout }) => {
 
         {room ? (
           (
-            returnDisplay(room)
+            <FullScreen handle={handle}>
+            {returnDisplay(room)}
+            </FullScreen>
           )
         )
         : (
