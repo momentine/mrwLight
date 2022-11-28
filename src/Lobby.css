@@ -5,9 +5,7 @@
     background-color: black;
     /* text-align: center */
   }
-
   .main {
-    margin-top: 10rem;
     text-align: center
   }
 
@@ -15,7 +13,7 @@
     text-align: center
   }
 
-/* h1 {
+h1 {
     text-align: center;
     font-size: 6rem;
     color: gold;
@@ -28,10 +26,10 @@ h2 {
     color: white;
     font-weight: bold;
 
-} */
+}
 
 .chooseButton {
-    font-size: 4rem;
+    font-size: 3rem;
     padding-left: 3rem;
     border-radius: 4rem;
     padding-right: 3rem;
@@ -42,6 +40,7 @@ h2 {
     color: white;
     margin: 3rem
 }
+
 .hostButton {
 	background: none;
 	color: inherit;
@@ -51,7 +50,7 @@ h2 {
 	cursor: pointer;
 	outline: inherit;
 }
-button:hover {
+.chooseButton:hover {
     background-color:white;
     color: black
 }
@@ -61,3 +60,29 @@ button:hover {
     padding: 1rem
 
 }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  
+  }
+
+.col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:50%;
+    /* margin: 0 0 1em 0; */
+    padding: 1em;
+  }
+  
+  .window {
+    margin: 1em 0;
+    display: flex;
+    width: 95%;
+    justify-content: center;
+    margin:2%
+   
+  }

@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: white;
 }
 
 html {
@@ -14,19 +15,33 @@ body {
   min-height: 100%;
 }
 
-header {
+/* header {
   background: #f0293e;
   color: #fff;
   text-align: center;
   flex-grow: 0;
   margin-bottom: 2em;
-}
+} */
 
-h1 {
+/* h1 {
   font-weight: 300;
   padding: 0.4em 0;
+} */
+
+h1 {
+  text-align: center;
+  font-size: 6rem;
+  color: gold;
+  font-weight: bold;
 }
 
+
+h2 {
+  padding: 2rem;
+  color: white;
+  font-weight: bold;
+
+}
 #root {
   min-height: 100vh;
 }
@@ -43,15 +58,20 @@ main {
 }
 
 form {
-  max-width: 300px;
+  /* max-width: 300px;
+  margin: 0 auto; */
+  max-width: 600px;
   margin: 0 auto;
+  /* margin: 1rem;
+  margin-left: auto;
+  margin-right: auto */
 }
 
-h2 {
+/* h2 {
   font-weight: 300;
   margin-bottom: 1em;
   text-align: center;
-}
+} */
 
 form > div {
   width: 100%;
@@ -72,14 +92,14 @@ form > div > input {
 
 
 
-button {
+/* button {
   background: #333e5a;
   color: #fff;
   font-size: 16px;
   padding: 0.4em;
   border-radius: 6px;
   border: 1px solid transparent;
-}
+} */
 button:hover {
   filter: brightness(150%);
 }

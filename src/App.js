@@ -9,14 +9,16 @@ import StartPage from './Pages/StartPage';
 const App = () => {
   return (
     <div className="app">
-    <BrowserRouter>
+      <OutsideAlerter></OutsideAlerter>
+    {/* <BrowserRouter>
       <Routes>
         <Route path="/" element={<OutsideAlerter />}>
-          {/* <Route index element={<Home />} /> */}
+
           <Route path="/StartPage" element={<StartPage />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
+    {/* <VideoChat/> */}
       {/* <main>
         <VideoChat />
       </main> */}

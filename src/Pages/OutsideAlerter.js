@@ -6,6 +6,7 @@ import { Button } from "@mui/material";
 import UserPage from "./UserPage";
 import StartPage from "./StartPage";
 import { Outlet, Link } from "react-router-dom";
+import VideoChat from "../VideoChat";
 
 
 /**
@@ -38,14 +39,14 @@ function useOutsideAlerter(setClick) {
  */
 export default function OutsideAlerter() {
  const [click, setClick] = useState(false)
- const [user, setUser] = useState("")
+//  const [user, setUser] = useState("")
   const wrapperRef = useRef(null);
   useOutsideAlerter(setClick);
 
 
 
   return  (
-    <div>
+    <div >
     {!click ? (
         <div className="main">
         <h1>Hi! Welcome to</h1>
@@ -57,20 +58,21 @@ export default function OutsideAlerter() {
       )
       : (
         // <UserPage></UserPage>
-        <div>
-            <img className = "header" src={logo} alt="LogoMini" />
-            <div className = "buttonsAlign">
-                <Link to="/StartPage">
-                    <button className="chooseButton" onClick={()=>setUser("guest")}>
-                        Join Meeting As Guest
-                    </button>
-                </Link>
+        <VideoChat></VideoChat>
+        // <div>
+        //     <img className = "header" src={logo} alt="LogoMini" />
+        //     <div className = "buttonsAlign">
+        //         <Link to="/StartPage">
+        //             <button className="chooseButton" onClick={()=>setUser("guest")}>
+        //                 Join Meeting As Guest
+        //             </button>
+        //         </Link>
 
-                <button className="chooseButton" onClick={()=>setUser("host")}>
-                    Join Meeting As Host
-                </button>
-            </div>   
-        </div>
+        //         <button className="chooseButton" onClick={()=>setUser("host")}>
+        //             Join Meeting As Host
+        //         </button>
+        //     </div>   
+        // </div>
         
       )}
       {/* {user !== "guest"  && user !== "host"? (
