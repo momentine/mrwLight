@@ -19,7 +19,7 @@ const Lobby = ({
     <img className = "header" src={logo} alt="LogoMini" />
             
       
-      <h2>Pick User:</h2>
+      {/* <h2>Pick User:</h2> */}
 
       {/* <Button style={{margin: "auto"}} onClick={() => handleUsernameChange('guest')}>Guest</Button>
       <Button style={{margin: "auto"}} onClick={() => handleUsernameChange('windowFront')}>windowFront</Button>
@@ -40,7 +40,7 @@ const Lobby = ({
                 </div>
                 {/* <h2>Is guest?</h2> */}
                 <button type="submit" className="chooseButton" onClick={()=>handleUsernameChange('guest')}>
-                    Join Meeting As Guest
+                    Remote Guest
                 </button>
 
                </div>
