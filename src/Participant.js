@@ -182,7 +182,7 @@ const Participant = ({ participant, canvasBool, styles }) => {
       <h3>{participant.identity}</h3>
       <div id="overlayBOX">
         <video style={styles} ref={videoRef} autoPlay={true} />
-        <audio ref={audioRef} autoPlay={true} muted={false} />
+        <audio ref={audioRef} autoPlay={true} muted={true} />
       </div>
     </div>
   );
