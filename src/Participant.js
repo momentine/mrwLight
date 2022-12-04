@@ -78,7 +78,8 @@ const Participant = ({ participant, canvasBool, styles }) => {
     }
     contextRef.current = canvasRef.current.getContext("2d");
     const constraints = {
-      video: { width: { min: 20 }, height: { min: 20 } },
+      // video: { width: { min: 20 }, height: { min: 20 } },
+      video: { width: { min: 0 }, height: { min: 0 } },
     };
     // console.log(videoRef)
     // console.log(videoRef.current)
