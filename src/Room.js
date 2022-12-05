@@ -154,10 +154,15 @@ const Room = ({ roomName, room, handleLogout }) => {
   return (
     <div className="room">
       <h2>Room: {roomName}</h2>
-      <button onClick={handle.enter} styles={{margin:"10px"}}>
-        Fullscreen
-      </button>
-      <button onClick={handleLogout}>Log out</button>
+      <div className="screenButtons">
+        <button className="logout" onClick={handleLogout}>Log out</button>
+        {/* <button className="fullButt" onClick={handle.enter} styles={{margin:"10px"}}>
+          Fullscreen
+        </button> */}
+        <button className="fullButt" onClick={handle.enter}>
+          Fullscreen
+        </button>
+      </div>
       <div className="local-participant">
 
         {room ? (

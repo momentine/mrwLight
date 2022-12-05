@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* background-color: white; */
 }
 
 html {
@@ -14,19 +15,33 @@ body {
   min-height: 100%;
 }
 
-header {
+/* header {
   background: #f0293e;
   color: #fff;
   text-align: center;
   flex-grow: 0;
   margin-bottom: 2em;
-}
+} */
 
-h1 {
+/* h1 {
   font-weight: 300;
   padding: 0.4em 0;
+} */
+
+h1 {
+  text-align: center;
+  font-size: 6rem;
+  color: gold;
+  font-weight: bold;
 }
 
+
+h2 {
+  padding: 2rem;
+  color: white;
+  font-weight: bold;
+
+}
 #root {
   min-height: 100vh;
 }
@@ -43,14 +58,21 @@ main {
 }
 
 form {
-  max-width: 300px;
+  /* max-width: 300px;
+  margin: 0 auto; */
+  max-width: 600px;
   margin: 0 auto;
+  /* margin: 1rem;
+  margin-left: auto;
+  margin-right: auto */
 }
 
-h2 {
-  font-weight: 300;
-  margin-bottom: 1em;
+h3 {
+  /* font-weight: 300; */
+  /* margin-bottom: 1em; */
+  margin: 1em;
   text-align: center;
+  color: white
 }
 
 form > div {
@@ -70,16 +92,58 @@ form > div > input {
   border: 1px solid #333e5a;
 }
 
+/* .screenButtons {
+  justify-content: left;
+  display:block;
+  text-align: left;
+} */
+
+.logout {
+  font-size: 3rem;
+  padding-left: 3rem;
+  border-radius: 4rem;
+  padding-right: 3rem;
+  font-weight: 900;
+  background-color: black;
+  border-radius: 25px;
+  border-color: white;
+  color: white;
+  margin: 3rem;
+  margin-right: 1rem;
+  position:absolute;
+  top:0;
+  right:0;
+  z-index:2147483647;
+}
+
+.fullButt {
+  font-size: 3rem;
+  padding-left: 3rem;
+  border-radius: 4rem;
+  padding-right: 3rem;
+  font-weight: 900;
+  background-color: red;
+  border-radius: 25px;
+  border-color: white;
+  color: white;
+  margin: 3rem;
+  margin-right: 1rem;
+  position:absolute;
+  /* top:500px; */
+  right:0;
+  z-index:2147483647;
+}
 
 
-button {
+
+/* button {
   background: #333e5a;
   color: #fff;
   font-size: 16px;
   padding: 0.4em;
   border-radius: 6px;
   border: 1px solid transparent;
-}
+} */
 button:hover {
   filter: brightness(150%);
 }
@@ -87,11 +151,11 @@ button:hover {
 .room {
   position: relative;
 }
-.room button {
+/* .room button {
   position: absolute;
   top: 0;
   right: 20px;
-}
+} */
 .room > h3 {
   text-align: center;
   font-weight: 300;
@@ -104,11 +168,11 @@ button:hover {
 }
 
 .remote-participants {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
   padding: 0 2em 2em;
   width: 640px;
-  height: 360px;
+  height: 360px; */
 }
 
 .wfFriends {
@@ -119,24 +183,27 @@ button:hover {
 }
 
 
-.fullscreen-enabled .overlayBOX {
+/* .fullscreen-enabled .overlayBOX {
   background: green;
 }
 
 
 .fullscreen-enabled .overlayBOX {
-  width:"100%";
-  height:"100%";
-}
+  width:100vw;
+  height:100vh;
+} */
 
 .fullscreen-enabled video {
-  width:"100%" ;
-  height:"100%" ;
+  width:100vw ;
+  height:100vh;
+  object-fit: cover
 }
 
 .fullscreen-enabled canvas {
-  width:"100%" ;
-  height:"100%" ;
+  width:100vw ;
+  height:100vh ;
+  z-index: 2147483647
+
 }
 
 /* .participant {
@@ -171,10 +238,13 @@ canvas {
 video {
   /* width: 100vw;
   height: 100vh; */
-  width:1280px;
-  height:960px;
+  /* width:1280px;
+  height:960px; */
   /* max-width: 640px;
   max-height: 360px; */
+  width:100vw ;
+  height:100vh ;
+  object-fit: cover;
   display: block;
   margin: 0 auto;
   border-radius: 6px;
