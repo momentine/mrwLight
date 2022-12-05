@@ -90,6 +90,48 @@ form > div > input {
   border: 1px solid #333e5a;
 }
 
+/* .screenButtons {
+  justify-content: left;
+  display:block;
+  text-align: left;
+} */
+
+.logout {
+  font-size: 3rem;
+  padding-left: 3rem;
+  border-radius: 4rem;
+  padding-right: 3rem;
+  font-weight: 900;
+  background-color: black;
+  border-radius: 25px;
+  border-color: white;
+  color: white;
+  margin: 3rem;
+  margin-right: 1rem;
+  position:absolute;
+  top:0;
+  right:0;
+  z-index:2147483647;
+}
+
+.fullButt {
+  font-size: 3rem;
+  padding-left: 3rem;
+  border-radius: 4rem;
+  padding-right: 3rem;
+  font-weight: 900;
+  background-color: red;
+  border-radius: 25px;
+  border-color: white;
+  color: white;
+  margin: 3rem;
+  margin-right: 1rem;
+  position:absolute;
+  /* top:500px; */
+  right:0;
+  z-index:2147483647;
+}
+
 
 
 /* button {
@@ -107,11 +149,11 @@ button:hover {
 .room {
   position: relative;
 }
-.room button {
+/* .room button {
   position: absolute;
   top: 0;
   right: 20px;
-}
+} */
 .room > h3 {
   text-align: center;
   font-weight: 300;
