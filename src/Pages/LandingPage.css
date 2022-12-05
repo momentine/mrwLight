@@ -1,20 +1,20 @@
 *{
-    margin: 0;
+    /* margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; */
     /* background-color: black; */
     /* background-color: white;  */
     /* text-align: center */
   }
 
-  .main {
+  /* .main {
     margin-top: 10rem;
     text-align: center
-  }
+  } */
 
-  .buttonsAlign {
+  /* .buttonsAlign {
     text-align: center
-  }
+  } */
 
 /* h1 {
     text-align: center;
@@ -31,7 +31,7 @@ h2 {
 
 } */
 
-.chooseButton {
+/* .chooseButton {
     font-size: 4rem;
     padding-left: 3rem;
     border-radius: 4rem;
@@ -42,8 +42,8 @@ h2 {
     border-color: white;
     color: white;
     margin: 3rem
-}
-.hostButton {
+} */
+/* .hostButton {
 	background: none;
 	color: inherit;
 	border: none;
@@ -61,4 +61,4 @@ button:hover {
     left:1rem;
     padding: 1rem
 
-}
+} */

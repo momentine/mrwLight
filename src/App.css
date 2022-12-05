@@ -67,11 +67,13 @@ form {
   margin-right: auto */
 }
 
-/* h2 {
-  font-weight: 300;
-  margin-bottom: 1em;
+h3 {
+  /* font-weight: 300; */
+  /* margin-bottom: 1em; */
+  margin: 1em;
   text-align: center;
-} */
+  color: white
+}
 
 form > div {
   width: 100%;
@@ -166,11 +168,11 @@ button:hover {
 }
 
 .remote-participants {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
   padding: 0 2em 2em;
   width: 640px;
-  height: 360px;
+  height: 360px; */
 }
 
 .wfFriends {
@@ -181,7 +183,7 @@ button:hover {
 }
 
 
-.fullscreen-enabled .overlayBOX {
+/* .fullscreen-enabled .overlayBOX {
   background: green;
 }
 
@@ -189,7 +191,7 @@ button:hover {
 .fullscreen-enabled .overlayBOX {
   width:100vw;
   height:100vh;
-}
+} */
 
 .fullscreen-enabled video {
   width:100vw ;
@@ -236,10 +238,13 @@ canvas {
 video {
   /* width: 100vw;
   height: 100vh; */
-  width:1280px;
-  height:960px;
+  /* width:1280px;
+  height:960px; */
   /* max-width: 640px;
   max-height: 360px; */
+  width:100vw ;
+  height:100vh ;
+  object-fit: cover;
   display: block;
   margin: 0 auto;
   border-radius: 6px;

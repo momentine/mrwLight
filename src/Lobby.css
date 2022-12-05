@@ -1,16 +1,32 @@
-*ç{
+/* *ç{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* background-color: white; */
+    background-color: black;
+    text-align: center 
+  } */
+  /* .main {
+    text-align: center
+  } */
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: black; */
+    /* background-color: white;  */
     /* text-align: center */
   }
+
   .main {
+    margin-top: 10rem;
     text-align: center
   }
 
+
   .buttonsAlign {
-    text-align: center
+    margin-top: 5rem;
+    text-align: center;
   }
 
 h1 {
@@ -29,16 +45,19 @@ h2 {
 }
 
 .chooseButton {
-    font-size: 3rem;
-    padding-left: 3rem;
-    border-radius: 4rem;
-    padding-right: 3rem;
-    font-weight: 900;
-    background-color: black;
-    border-radius: 25px;
-    border-color: white;
-    color: white;
-    margin: 3rem
+  font-size: 4rem;
+  padding-left: 3rem;
+  border-radius: 4rem;
+  padding-right: 3rem;
+  font-weight: 900;
+  background-color: black;
+  border-radius: 25px;
+  border-color: white;
+  color: white;
+  width: 93%;
+  padding: 2rem;
+  margin: 3rem .5rem 3rem .5rem 
+
 }
 
 .hostButton {
@@ -49,6 +68,7 @@ h2 {
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+  width: 100%
 }
 .chooseButton:hover {
     background-color:white;

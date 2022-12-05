@@ -1,7 +1,7 @@
 import React from "react";
 import Button from '@mui/material/Button';
 import front from './Pages/images/frontW.png'
-import back from './Pages/images/backW.png'
+import back from './Pages/images/backW.svg'
 import logo from './Pages/images/logo.png'
 import './Lobby.css';
 
@@ -25,7 +25,7 @@ const Lobby = ({
       <Button style={{margin: "auto"}} onClick={() => handleUsernameChange('windowFront')}>windowFront</Button>
       <Button  style={{margin: "auto"}}onClick={() => handleUsernameChange('windowBack')}>windowBack</Button> */}
             <div className = "buttonsAlign">
-                <div>
+          
                 {/* <img className = "header" src={logo} alt="LogoMini" />
                 <h1>Which Screen?</h1> */}
                 {/* <h2>Is host?</h2> */}
@@ -43,8 +43,6 @@ const Lobby = ({
                     Remote Guest
                 </button>
 
-               </div>
-
                 {/* <button className="chooseButton" onClick={()=>handleUsernameChange('windowFront')}>
                     Join Meeting As Host
                 </button> */}
@@ -61,7 +59,7 @@ const Lobby = ({
           required
         />
       </div> */}
-      <h2>{connecting ? "Connecting" : ""}</h2>
+      <h2>{connecting ? "Connecting..." : ""}</h2>
       {/* <button type="submit" disabled={connecting}>
         {connecting ? "Connecting" : "Join"}
       </button> */}
