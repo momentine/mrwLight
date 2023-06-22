@@ -1,6 +1,6 @@
 # Mixed Reality Window (MRW) Software 
 
-This is a video chat application built with [Twilio Video](https://www.twilio.com/docs/video) and React. A selfie segmentation API was addded to take the silloute of the remote user and make them into the physical space of the MRW enviornment. 
+This is a video chat application built with [Twilio Video](https://www.twilio.com/docs/video) and React. A selfie segmentation API was addded to take the silloute of the remote user and putthem into the physical space of the MRW enviornment. 
 
 Reference: [Build a Twilio Video Chat with React Hooks](https://www.twilio.com/blog/video-chat-react-hooks).
 
